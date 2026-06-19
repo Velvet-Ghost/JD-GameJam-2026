@@ -2,8 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://b8gg7mhlp3k12" path="res://sprites/bg.png" id="1_5gx2l"]
 [ext_resource type="PackedScene" uid="uid://wyjsxtk83lg8" path="res://ship/ship.tscn" id="1_7lnir"]
+[ext_resource type="Script" uid="uid://bwdkj8k5qv14o" path="res://level/level.gd" id="1_qohg2"]
 
 [node name="Level" type="Node2D" unique_id=793329198]
+script = ExtResource("1_qohg2")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1143045243]
 texture_filter = 1
@@ -22,3 +24,7 @@ offset = Vector2(0, 200)
 zoom = Vector2(1.2, 1.2)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
+
+[node name="Drill" type="Node2D" parent="." unique_id=448209664]
+
+[connection signal="deploy" from="Ship" to="." method="_on_ship_deploy"]
