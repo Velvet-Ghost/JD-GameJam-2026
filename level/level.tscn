@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://d0oh240tg0hdg"]
+
+[ext_resource type="Texture2D" uid="uid://b8gg7mhlp3k12" path="res://sprites/bg.png" id="1_5gx2l"]
+[ext_resource type="PackedScene" uid="uid://wyjsxtk83lg8" path="res://ship/ship.tscn" id="1_7lnir"]
+
+[node name="Level" type="Node2D" unique_id=793329198]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1143045243]
+texture_filter = 1
+offset_left = -91.0
+offset_top = -57.0
+offset_right = 2789.0
+offset_bottom = 2103.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_5gx2l")
+
+[node name="Ship" parent="." unique_id=39455 instance=ExtResource("1_7lnir")]
+position = Vector2(484, 122)
+
+[node name="Camera2D" type="Camera2D" parent="Ship" unique_id=771915204]
+offset = Vector2(0, 200)
+zoom = Vector2(1.2, 1.2)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
