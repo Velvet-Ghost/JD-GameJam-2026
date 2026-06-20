@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://wyjsxtk83lg8"]
 
 [ext_resource type="Script" uid="uid://c7vvifr87evda" path="res://ship/ship.gd" id="1_2jgil"]
-[ext_resource type="Texture2D" uid="uid://dymlucm4r4775" path="res://sprites/ship.png" id="1_jgjpc"]
+[ext_resource type="Texture2D" uid="uid://c32yclc0see7p" path="res://sprites/ship.png" id="1_jgjpc"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_igsoc"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -20,13 +20,16 @@ size = Vector2(568, 332)
 [node name="Ship" type="CharacterBody2D" unique_id=39455]
 texture_filter = 1
 scale = Vector2(0.5, 0.5)
+collision_mask = 0
 script = ExtResource("1_2jgil")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1211892012]
-position = Vector2(-118, 12)
-sprite_frames = SubResource("SpriteFrames_g4v7s")
+position = Vector2(-3.8146973e-06, -1.0000076)
+scale = Vector2(5.6800003, 6.6000004)
+sprite_frames = SubResource("SpriteFrames_igsoc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2029674647]
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="DeployMarker" type="Marker2D" parent="." unique_id=637042336]
+position = Vector2(0, 124)

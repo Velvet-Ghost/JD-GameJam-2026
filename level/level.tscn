@@ -7,24 +7,23 @@
 [node name="Level" type="Node2D" unique_id=793329198]
 script = ExtResource("1_qohg2")
 
+[node name="Camera" type="Camera2D" parent="." unique_id=771915204]
+position = Vector2(484, 122)
+scale = Vector2(0.5, 0.5)
+offset = Vector2(0, 200)
+zoom = Vector2(1.2, 1.2)
+
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1143045243]
 texture_filter = 1
-offset_left = -91.0
-offset_top = -57.0
-offset_right = 2789.0
-offset_bottom = 2103.0
+offset_left = -883.0
+offset_top = -16.0
+offset_right = 5705.0
+offset_bottom = 2144.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_5gx2l")
 
 [node name="Ship" parent="." unique_id=39455 instance=ExtResource("1_7lnir")]
 position = Vector2(484, 122)
 
-[node name="Camera2D" type="Camera2D" parent="Ship" unique_id=771915204]
-offset = Vector2(0, 200)
-zoom = Vector2(1.2, 1.2)
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
-
-[node name="Drill" type="Node2D" parent="." unique_id=448209664]
-
+[connection signal="free_ship" from="." to="Ship" method="_on_level_free_ship"]
 [connection signal="deploy" from="Ship" to="." method="_on_ship_deploy"]
