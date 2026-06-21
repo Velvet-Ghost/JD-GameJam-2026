@@ -1,3 +1,106 @@
 [gd_scene format=3 uid="uid://bjqymyaak547p"]
 
-[node name="Ground" type="StaticBody2D" unique_id=999003638]
+[ext_resource type="Script" uid="uid://dqnbog1eeew5g" path="res://ground.gd" id="1_ves1e"]
+[ext_resource type="Texture2D" uid="uid://bbdyxwcseup2y" path="res://sprites/tiles.png" id="2_4xtua"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_pvste"]
+noise_type = 0
+frequency = 0.002
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dn8bk"]
+noise = SubResource("FastNoiseLite_pvste")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_usajc"]
+texture = ExtResource("2_4xtua")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+3:15/0 = 0
+0:16/0 = 0
+1:16/0 = 0
+2:16/0 = 0
+3:16/0 = 0
+0:17/0 = 0
+1:17/0 = 0
+2:17/0 = 0
+3:17/0 = 0
+0:18/0 = 0
+1:18/0 = 0
+2:18/0 = 0
+3:18/0 = 0
+0:19/0 = 0
+1:19/0 = 0
+2:19/0 = 0
+3:19/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_dn8bk"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_usajc")
+
+[node name="Ground" type="Node2D" unique_id=2088403017]
+script = ExtResource("1_ves1e")
+noise_height_text = SubResource("NoiseTexture2D_dn8bk")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1707759089]
+tile_set = SubResource("TileSet_dn8bk")

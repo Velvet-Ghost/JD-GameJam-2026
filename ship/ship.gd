@@ -13,7 +13,7 @@ func _physics_process(_delta: float) -> void:
 
 func movement():
 	if is_drill_deployed == false:
-		var direction := Input.get_axis("ui_left", "ui_right")
+		var direction := Input.get_axis("left", "right")
 		if direction:
 			velocity.x = direction * SPEED
 		else:
@@ -23,17 +23,21 @@ func movement():
 		move_and_slide()
 
 func slight_rotation(): # FIX!
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("right"):
 		if $".".rotation < 0.3:
 			$".".rotate(0.008)
-	elif Input.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("left"):
 		if $".".rotation > -0.3:
 			$".".rotate(-0.008)
 	else:
-		if $".".rotation > 0.1:
+		if $".".rotation > 0.02:
 			$".".rotate(-0.012)
-		elif $".".rotation < 0.1:
+		elif $".".rotation < 0.0:
 			$".".rotate(0.012)
+		elif $".".rotation <= 0.005 or $".".rotation >= -0.005:
+			$".".rotation = 0.0
+			#i dont ask questions I just know i was able to fix it so hooray
+	
 
 func deploy_drill():
 	if Input.is_action_just_pressed("deploy") and is_drill_deployed == false:
