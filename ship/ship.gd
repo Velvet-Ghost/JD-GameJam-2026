@@ -12,6 +12,7 @@ func _physics_process(_delta: float) -> void:
 	movement()
 
 func movement():
+	#if you could make it move faster the longer you hold down to act as if it had resistentce, that would be awesome, just message me if u dont understand
 	if is_drill_deployed == false:
 		var direction := Input.get_axis("left", "right")
 		if direction:

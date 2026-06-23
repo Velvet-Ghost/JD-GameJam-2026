@@ -14,11 +14,11 @@ scale = Vector2(0.5, 0.5)
 offset = Vector2(0, 200)
 zoom = Vector2(1.2, 1.2)
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1143045243]
+[node name="BackGround" type="TextureRect" parent="." unique_id=1143045243 groups=["Background"]]
 texture_filter = 1
 offset_left = -883.0
 offset_top = -16.0
-offset_right = 5705.0
+offset_right = 5701.0
 offset_bottom = 2144.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_5gx2l")
@@ -27,7 +27,7 @@ texture = ExtResource("1_5gx2l")
 position = Vector2(484, 122)
 
 [node name="Ground" parent="." unique_id=2088403017 instance=ExtResource("4_vkbyq")]
-position = Vector2(-883, 481)
+position = Vector2(-883, 502)
 
 [connection signal="free_ship" from="." to="Ship" method="_on_level_free_ship"]
 [connection signal="deploy" from="Ship" to="." method="_on_ship_deploy"]
